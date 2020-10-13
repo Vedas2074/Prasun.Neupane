@@ -2,13 +2,13 @@ using System.IO;
 using System;
   
   namespace LearningAboutFile
+  {
 
     public class FileIO
     {
         public void LearnFileReading()
         {
-          string filecontent =  File.ReadAllText(@"E:\.net centric computing\Vedas-Lab\Prasun.Neupane\CSharpBasic\file.txt");
-          Console.WriteLine("filecontent");
+          string filecontent =  File.ReadAllText("Program.cs");
         }
 
         public void LeranFileWriting()
@@ -31,7 +31,7 @@ using System;
         internal void LearnDirectory()
         {
             Directory.CreateDirectory("ABC");
-            file.WriteAllText(@"ABC\a.prasun","this is new file");
+            File.WriteAllText(@"ABC\a.prasun","this is new file");
         }
 
         internal void LearnDirectoryInfo()
@@ -39,7 +39,7 @@ using System;
             string folderpath = @"E:\.net centric computing\Vedas-Lab\Prasun.Neupane";
             DirectoryInfo directory = new DirectoryInfo(folderpath);
             var files = directory.GetFiles();
-            console.WriteLine("file count:" + files.Length)
+            Console.WriteLine("file count:" + files.Length);
         }
     }
-    
+  }  
