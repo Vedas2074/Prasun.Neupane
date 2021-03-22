@@ -4,9 +4,10 @@
   ViewData["Title"] = "All Employee";
   string[] genders = { "Male", "Female", "Others" };
 }
-<h4>Add New Employee...</h4>
+<h4>Update Employee...</h4>
 <hr />
-<form asp-controller="Employee" asp-action="Add" method="POST">
+<form asp-controller="Employee" asp-action="Edit" method="POST">
+  <input type="hidden" asp-for="Id"/>
   <div class="form-group">
     <label asp-for="FirstName"></label>
     <span class="text-danger" asp-validation-for="FirstName"></span>
@@ -25,17 +26,17 @@
     <label asp-for="Gender"></label>
     @foreach (var gender in genders)
     {
-      
+
       <div class="form-check form-check-inline">
-    <input type="radio" class="form-check-input" asp-for="Gender" id="@gender" value="@gender[0]"> 
-    <label class="form-check-label" asp-for="@gender">@gender</label>
+        <input type="radio" class="form-check-input" asp-for="Gender" id="@gender" value="@gender[0]">
+        <label class="form-check-label" asp-for="@gender">@gender</label>
       </div>
     }
-</div>
-<div class="form-group">
+  </div>
+  <div class="form-group">
     <label asp-for="Salary"></label>
     <input type="number" class="form-control" asp-for="Salary" placeholder="Enter Your Salary">
   </div>
 
-  <button type="submit" class="btn btn-primary">Save Employee </button>
+  <button type="submit" class="btn btn-primary">Update Employee </button>
 </form>
